@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.utils import timezone
+from rest_framework.response import Response
 # Create your models here.
 
 class Message(models.Model):
@@ -14,10 +14,10 @@ class Message(models.Model):
         id = self.username.id
         email = self.username.email
         create= {
-            'id': id,
-            'username': username,
-            'email': email
+             id,
+             username,
+             email
         }
-        return create
+        return self.username
 
 

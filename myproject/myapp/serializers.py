@@ -11,17 +11,8 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class MessageSerializer(serializers.ModelSerializer):
-    created_by = serializers.SerializerMethodField()
-
-    def get_created_by(self, Message):
-        return UserSerializer(Message.created_by(), many=True).data
-
+    username = UserSerializer()
     class Meta:
         model = Message
-        fields = [
-            'id',
-            'message',
-            'created',
-            'updated',
-            'created_by',
-        ]
+        fields = ('id' ,'username')
+

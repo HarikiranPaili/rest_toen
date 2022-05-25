@@ -47,5 +47,5 @@ class Message(viewsets.ModelViewSet):
 
             "updated_at": "last updated time in UTC",
 
-                          "c":aw
+                          "c":"aw"
         })
